@@ -6,4 +6,10 @@ export class EnvDTO {
 
     @IsString()
     STRIPE_SECRET_KEY: string
+
+    @IsString()
+    STRIPE_SECRET_WEBHOOK: string
+
+    @IsString()
+    STRIPE_ID_PLAN: string
 }

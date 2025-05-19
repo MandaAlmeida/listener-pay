@@ -32,7 +32,7 @@ export class UserService {
                 name,
                 email,
                 password: hashedPassword,
-                stripeCustomerId: customer.id, // se você estiver salvando isso no banco
+                stripeCustomerId: customer.id,
             },
         });
 
