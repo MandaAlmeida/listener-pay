@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException, UnauthorizedException } from "@nestjs/common";
 import { compare, hash } from "bcryptjs";
-import { PaymentsService } from "src/payments/payments.service";
-import { PrismaService } from "src/prisma/prisma.service";
+import { PaymentsService } from "@/payments/payments.service";
+import { PrismaService } from "@/prisma/prisma.service";
 
 
 
@@ -66,12 +66,11 @@ export class UserService {
      */
     async fetchById(userId: string) {
         // Busca o usuário no banco, excluindo a senha
-        const userFound = this.prisma.user.findUnique({
+        const userFound = await this.prisma.user.findUnique({
             where: { id: userId },
         });
-        if (!userFound) {
-            throw new NotFoundException("Usuário não encontrado");
-        }
+
+        if (!userFound) throw new NotFoundException("Usuário não encontrado");
 
         return userFound;
     }

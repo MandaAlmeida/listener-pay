@@ -1,6 +1,6 @@
 import { ConflictException, Injectable } from "@nestjs/common";
-import { EnvService } from "src/env/env.service";
-import { PrismaService } from "src/prisma/prisma.service";
+import { EnvService } from "@/env/env.service";
+import { PrismaService } from "@/prisma/prisma.service";
 import { Request, Response } from 'express';
 
 import Stripe from "stripe";
@@ -75,7 +75,7 @@ export class PaymentsService {
                 signature,
                 this.config.get("STRIPE_SECRET_WEBHOOK")
             );
-        } catch (err) {
+        } catch (err: any) {
             return res.status(400).send(`Webhook Error: ${err.message}`);
         }
 
