@@ -44,7 +44,7 @@ Este projeto é um serviço de pagamentos baseado em [NestJS](https://nestjs.com
 Crie um arquivo `.env`:
 
 ```env
-DATABASE_URL=postgresql://postgres:docker@localhost:5432/{nomedoseuprojeto}?schema=public
+DATABASE_URL=postgresql://postgres:docker@localhost:5432/seu_banco_de_dados?schema=public
 STRIPE_SECRET_KEY=sk_test_XXXXXXXXXXXXXXXXXXXXXXXX
 STRIPE_SECRET_WEBHOOK=whsec_XXXXXXXXXXXXXXXXXXXXXXXX
 STRIPE_ID_PLAN=price_XXXXXXXXXXXXXXXXXXXXXXXX
